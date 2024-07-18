@@ -29,11 +29,9 @@ func new_game():
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
 
-
 func _on_score_timer_timeout():
 	score += 1
 	$HUD.update_score(score)
-
 
 func _on_mob_timer_timeout():
 	# Create a new instance of the Mob scene.
@@ -50,7 +48,7 @@ func _on_mob_timer_timeout():
 	mob.position = mob_spawn_location.position
 
 	# Add some randomness to the direction.
-	direction += randf_range(-PI / 4, PI / 4)
+	direction += randf_range( - PI / 4, PI / 4)
 	mob.rotation = direction
 
 	# Choose the velocity for the mob.
@@ -59,7 +57,6 @@ func _on_mob_timer_timeout():
 
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
-
 
 func _on_start_timer_timeout():
 	$MobTimer.start()
